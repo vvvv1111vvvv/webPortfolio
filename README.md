@@ -15,7 +15,7 @@
 - Mysql Activation
     - Check if db, table, data exits in DB
     - Insert data.csv file to DB
-    - Get data frp, DB
+    - Get data from DB
     - Write data.csv file to DB
 - Wep Activation
     - Display chart data from DB

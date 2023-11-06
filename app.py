@@ -9,8 +9,15 @@ app = Flask(__name__)
 
 db_access= DB_Access()
 db_access.checkDB()
-
+predict_KOSPI_fromDB, actual_KOSPI_fromDB=db_access.getFromDB()
+y_pred = predict_KOSPI_fromDB, Y_real = actual_KOSPI_fromDB
 @app.route('/', methods=['GET','POST'])
+def index():
+
+    return render_template("index.html", y_pred, Y_real)
+
+
+@app.route('/TTS', methods=['GET','POST'])
 def index():
     predict_KOSPI_fromDB, actual_KOSPI_fromDB=db_access.getFromDB()
     return render_template("index.html", y_pred = predict_KOSPI_fromDB, Y_real = actual_KOSPI_fromDB)

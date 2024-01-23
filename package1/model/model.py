@@ -1,7 +1,11 @@
 # Purpose: read KOSPI.list file and put to local mysql
 import pymysql,csv
 import sys,os
-import config
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from config import config
+current_dir = os.path.dirname(os.path.abspath(__file__))
+csv_file_path1 = os.path.join(current_dir, '..', 'resources','model', 'predict_KOSPI.csv')
+csv_file_path2 = os.path.join(current_dir, '..', 'resources','model', 'actual_KOSPI.csv')
 class DB_Access:
     def __init__(self):
         self.predict_KOSPI=[] 
@@ -9,12 +13,12 @@ class DB_Access:
         self.predict_KOSPI_fromDB=[] 
         self.actual_KOSPI_fromDB=[]
     def csv_to_list(self):
-        with open('predict_KOSPI.csv','r', encoding='utf-8') as f:
+        with open(csv_file_path1,'r', encoding='utf-8') as f:
             csvfile=csv.reader(f)
             tmp=list(csvfile)
             for i in range (len(tmp[0])):
                 self.predict_KOSPI.append(tmp[0][i])   
-        with open('actual_KOSPI.csv','r', encoding='utf-8') as f:
+        with open(csv_file_path2,'r', encoding='utf-8') as f:
             csvfile=csv.reader(f)
             tmp=list(csvfile)
             for i in range (len(tmp[0])):

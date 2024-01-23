@@ -1,10 +1,9 @@
 from flask import Flask, request, redirect, render_template, Blueprint
-from model import DB_Access
+from model.model import DB_Access
 import pymysql
 import csv
 import sys,os
-import config
-
+from config import config
 db_access= DB_Access()
 db_access.checkDB()
 predict_KOSPI_fromDB, actual_KOSPI_fromDB=db_access.getFromDB()

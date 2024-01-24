@@ -1,0 +1,258 @@
+body{
+    margin: 0px;
+    font-size: max(12px, 1.5vw);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #263343;
+    padding:max(3px,0.03%) 2%;
+}
+.navbar a{
+    text-decoration: none;
+    color:white;
+}
+.navbar-title a{
+    font-size: 1.5rem;
+}
+
+.navbar-menu{
+    display:flex;
+    list-style: none;
+    padding-left: 0px;
+}
+.navbar-menu li {
+    margin-right: 20px;
+}
+#masthead-a{
+    cursor: pointer;
+}
+#masthead-b{
+    cursor: pointer;
+}
+#skills-b{
+    cursor: pointer;
+}
+#projects1-b{
+    cursor: pointer;
+}
+#vision-b{
+    cursor: pointer;
+}
+.navbar-menu :hover{
+    background: #d49466;
+    border-radius: 1px;
+}
+.navbar-menu li{
+    padding:4px;
+}
+.navbar-toggleBtn{
+    cursor:pointer;
+    display:none;
+    position:absolute;
+    right: max(32px, 10%);
+    font-size: 2rem;
+    color: #d49466;
+}
+@media screen and (max-width:768px){
+    .navbar{
+        flex-direction: column;
+        align-items:center;
+        padding: max(4px, 1%) max(5px, 1.2%);
+    }
+    .navbar-menu{
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        background: #263343;
+    }
+    .navbar-menu li{
+        width:100%;
+        text-align: center;
+    }
+    .navbar-toggleBtn{
+        cursor:pointer;
+        display:block;
+    }
+    .navbar-menu.active{
+        display:flex;
+    }
+}
+main{
+    padding-top: max(80px, 10%);
+    background: #f1edd9;
+    width:100%;
+    max-width: 100%;
+}
+.box-container{
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    padding-bottom:5%;
+    grid-template-rows: repeat(7,minmax(240px, 1fr));
+    gap: 0.8%;
+}
+.box-item {
+    background: #F4F3EA;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+.first-page{
+    display: grid;
+    padding-top:2.585%;
+    padding-bottom:2.585%;
+    width: 100%;
+    height: 100%;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-rows: 13fr 42.6fr 14fr 25.23fr;
+}
+.first-page-photo{
+    grid-column: 1/7;
+    grid-row: 1/3;
+}
+.first-page-name{
+    grid-column: 1/7;
+    grid-row: 3/4;
+}
+.first-page-univname{
+    grid-column: 7/13;
+    grid-row: 1/2;
+}
+.first-page-classes{
+    grid-column: 7/13;
+    grid-row: 2/5;
+}
+.first-page-git{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+.first-page-linkedin{
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+.first-page-mail{
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+.first-page-phone{
+    grid-column: 5/6;
+    grid-row: 4/5;
+
+}
+
+.second-page{
+    display: grid;
+    padding-top:2.585%;
+    padding-bottom:2.585%;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 92fr 117fr 117fr 117fr 117fr;
+}
+.second-page-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.second-page-1-title{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.second-page-2-title{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.second-page-3-title{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+.second-page-4-title{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+.second-page-1-skills{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.second-page-2-skills{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.second-page-3-skills{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+.second-page-4-skills{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+.project-page1{
+    display: grid;
+    padding-top:2.585%;
+    padding-bottom:2.585%;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 92fr 40fr 398fr 30fr;
+
+}
+.project-page1-title{
+    grid-column:1/3;
+    grid-row:1/2;
+}
+.project-page1-feature{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.project-page1-image{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.project-page1-abstract{
+    grid-column: 2/3;
+    grid-row: 2/5;
+}
+.project-page1-link{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+.vision-page{
+    display: grid;
+    padding-top:2.585%;
+    padding-bottom:2.585%;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 92fr 72fr 398fr;;
+}
+.vision-page-title{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.vision-page-feature{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.vision-page-image{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.vision-page-article{
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+

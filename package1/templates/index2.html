@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://kit.fontawesome.com/6b889cae7a.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- <script src="../static/css/bootstrap-5.3.2/dist/js/bootstrap.bundle.js"></script> -->
 </head>
 
@@ -90,41 +92,138 @@
     <div class="box-container">
       <div class="box-item">
         <div class="first-page" id='masthead'>
-          <div class="first-page-photo">photo</div>
-          <div class="first-page-name">name</div>
-          <div class="first-page-univname">univ name</div>
-          <div class="first-page-classes">classes</div>
-          <div class="first-page-git">git</div>
-          <div class="first-page-linkedin">linkedin</div>
-          <div class="first-page-mail">mail</div>
-          <div class="first-page-phone">phone</div>
+          <div class="first-page-photo">                
+            <img src="../static/images/view/profile/profile.jpg" class="first-page-photo-img"
+                  alt="suyoung profile image"></div>
+          <div class="first-page-name"><h1>박수영</h1></div>
+          <div class="first-page-git"  onclick="location.href='https://github.com/vvvv1111vvvv'"> <i class="fa-brands fa-github"></i></div>
+          <div class="first-page-linkedin"  onclick="location.href='https://www.linkedin.com/in/suyoung-park9876/'"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="first-page-mail" onclick="location.href='mailto:suyoung1999mail@gmail.com'"><i class="fa-regular fa-envelope"></i></div>
+          <div class="first-page-phone"  onclick="location.href='skype:live:1e0cf50a098eb20d?chat'"><i class="fa-brands fa-skype"></i></div>
+          <div class="first-page-line"></div>
+          <div class="first-page-univname">
+            <br>
+            <h2>학부: 전자전기컴퓨터공학부</h2>
+              <h3>재학: 2018.03 ~ </h3>
+            <h2>이수과목</h2>
+              <h3>운영체제&nbsp;&nbsp;컴퓨터구조<br>자료구조&nbsp;&nbsp;인공지능</h3>
+          </div>
+          <div class="first-page-classes">
+          </div>
+          
         </div>
       </div>
       <div class="box-item">
         <div class="second-page" id="skills">
-          <div class="second-page-title">tools and skills</div>
-          <article class="second-page-1-title">title1</article>
-          <article class="second-page-1-skills">skills1</article>
-          <article class="second-page-2-title">title2</article>
-          <article class="second-page-2-skills">skills2</article>
-          <article class="second-page-3-title">title3</article>
-          <article class="second-page-3-skills">skills3</article>
-          <article class="second-page-4-title">title4</article>
-          <article class="second-page-4-skills">skills4</article>
+          <div class="second-page-title"><h1>Skills</h1></div>
+          <div class="second-page-line"></div>
+          <article class="second-page-1-title"><h2>인공지능 KOSPI 예측 프로젝트</h2><h3>2022.06.28 ~ 2022.07.18</h3></article>
+          <article class="second-page-1-skills"><h2>LSTM model | Pandas, Numpy, Keras</h2></article>
+          <article class="second-page-2-title"><h2>안드로이드 임베디드 시스템 숫자인식 및 이미치처리 애플리케이션 제작 프로젝트</h2><h3>2022.11.11 ~ 2022.12.15</h3></article>
+          <article class="second-page-2-skills"><h2>OpenCV, OpenCL | Linux | Java, C</h2></article>
+          <article class="second-page-3-title"><h2>영화 자료 시스템 UML 설계 프로젝트</h2><h3>2023.05.18 ~ 2023.05.28</h3></article>
+          <article class="second-page-3-skills"><h2>UML</h2></article>
+          <article class="second-page-4-title"><h2>포트폴리오 웹페이지 제작 프로젝트</h2><h3>2023.10.31 ~ 2023.11.06</h3></article>
+          <article class="second-page-4-skills"><h2>AWS EC2 | flask, Mysql | JS</h2></article>
         </div>
       </div>
       <div class="box-item">
         <div class="project-page1" id="projects1">
-          <div class ="project-page1-title">title</div>
+          <div class="project-page1-line"></div>
+          <div class ="project-page1-title" onclick="location.href='https://github.com/vvvv1111vvvv/KOSPI-Index-Predicting-Project__2022-summer'"><h1>인공지능 KOSPI 예측 프로젝트 <i class="fa-brands fa-github"></i></h1></div>
 
-          <div class = "project-page1-feature">features</div>
-          <div class = "project-page1-image">image</div>
-          <article class = "project-page1-abstract">abstract</article>
-          <div class = "project-page1-link">link</div>
+          <div class = "project-page1-feature"><h2>2022.06.28 ~ 2022.07.18 | LSTM model | Pandas, Numpy, Keras</h2></div>
+          <div class = "project-page1-image">
+            <canvas id="myChart"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+            <script>
+              // 데이터
+              var i = {{ y_pred }};
+              var j = {{ Y_real }};
+              var data = {
+                labels: Array.from({ length: 245 }, (_, i) => i), // X축 데이터 (0부터 244까지)
+                datasets: [
+                  {
+                    label: 'predict KOSPI',
+                    data: i,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                  },
+                  {
+                    label: 'actual KOSPI',
+                    data: j, // 두 번째 Y값 데이터
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                  },
+                ],
+              };
+    
+              var options = {
+                //responsive:true,
+                maintainAspectRatio : false,
+                scales: {
+                  x: {
+                    type: 'linear',
+                    position: 'bottom',
+                    min: 0, // X축 최솟값
+                    max: 250, // X축 최댓값
+                  },
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              };
+    
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options,
+              });
+            </script>
+          </div>
+          <article class = "project-page1-abstract"><h2>"인공지능을 실물 경제에 접목시켜 KOSPI를 예측하는 프로젝트"<br><br>
+            2015.07.24 ~ 2021.06.30 기간의 실물경제 지표를 사용하여<br><br> KOSPI와의 상관관계를 확인, LSTM모델로 학습<br><br>
+            결과로 2021.07.01 ~ 2022.07.01 기간의 KOSPI지수를 도출</h2></article>
+          <div class = "project-page1-link"></div>
         </div>
       </div>
       <div class="box-item">
-        <div class="project-page1">4</div>
+        <div class="project-page1" id="projects2">
+          <div class="project-page1-line"></div>
+          <div class ="project-page1-title" onclick="location.href='https://github.com/vvvv1111vvvv/Number-Classification-and-Image-Processing-on-Android-Embedde__Applied-Microprocessor-Lab__2022-fall'"><h1>안드로이드 임베디드 시스템 이미치 처리 및 숫자 인식 애플리케이션 제작 프로젝트 <i class="fa-brands fa-github"></i></h1></div>
+
+          <div class = "project-page1-feature"><h2>2022.11.11 ~ 2022.12.15 | OpenCV, OpenCL | Linux | Java, C</h2></div>
+          <div class = "project-page1-slide">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-1.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-2.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-3.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-4.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-5.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-6.PNG"
+                  alt="img of Number Classification Project"></div>
+                <div class="swiper-slide"><img src="../static/images/view/projects2/projects2-7.PNG"
+                  alt="img of Number Classification Project"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <article class = "project-page1-abstract"><h2>"안드로이드 기반의 이미치 처리 & 숫자 인식 프로젝트"<br><br>
+            OpenCV, OpenCL을 활용: 원본, Blur, Edge-detection 이미지 생성<br><br> MNIST를 활용해 이미지별 숫자를 분류<br><br>
+            각 이미지별 숫자 인식 결과를 도출</h2></article>
+          <div class = "project-page1-link"></div>
+        </div>
       </div>
       <div class="box-item">
         <div class="project-page1">5</div>
@@ -143,5 +242,18 @@
     </div>
   </main>
 </body>
+<script type="module">
+  /*../static/js/node_modules/swiper*/
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
 
 </html>

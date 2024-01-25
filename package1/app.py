@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template, Blueprint
+from flask import Flask, request, redirect, render_template, Blueprint,send_from_directory
 from model.model import DB_Access
 import pymysql
 import csv
@@ -17,3 +17,7 @@ def index():
     return render_template("index.html", y_pred=y_pred, Y_real= Y_real)
 #if __name__ == '__main__':
 #    app.run(port=5001, host ='0.0.0.0', debug=True)
+
+@app.route('/robots.txt')
+def robot_to_root():
+    return send_from_directory(app.static_folder, request.path[1:])

@@ -15,6 +15,7 @@ body{
     align-items: center;
     background: #263343;
     padding:max(3px,0.03%) 2%;
+    z-index: 1000;
 }
 .navbar a{
     text-decoration: none;
@@ -131,7 +132,9 @@ main{
 }
 .first-page-photo-img{
     /*width: 100%;*/
-    height: 90%;
+    height: auto;
+    max-height: 80%;
+    max-width: 80%;
     /*object-fit: cover;*/
     border-radius: 20%;
     background-position: center;
@@ -145,6 +148,9 @@ main{
     grid-column: 7/13;
     grid-row: 2/5;
     word-break: keep-all;
+}
+.first-page-univname h2{
+    word-break: normal;
 }
 .first-page-classes{
     grid-column: 7/13;
@@ -168,7 +174,7 @@ main{
 .first-page-phone{
     grid-column: 5/6;
     grid-row: 5/6;
-        cursor: pointer;
+    cursor: pointer;
 }
 .first-page h1, .first-page i{
     font-size: 2.0rem

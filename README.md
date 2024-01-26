@@ -4,8 +4,8 @@
 
 ## 🚨 Requirement Specification
 
-- Share an externally accessible webpage link after implementation.
-- Upload the implemented code to your GitHub or GitLab, and summarize the details in a README, then share the link.
+- Share an externally accessible webpage link.
+- summarize the details in a README
 - Use database and chart for web GUI based on DB data.
 
 
@@ -21,17 +21,15 @@
     - Display chart data from DB
     - Navigation bar
     - Carousel for Images
-    - Link to gitHub and Linked In
-    - Send Email, Call Phone feature
-    - move top button
+    - Link to gitHub, LinkedIn
+    - Send Email, Call Skype feature
 
 ## 🔍 Technology Stack for Web
 
 - HTML, CSS, JavaScript
-- Bootstrap, chart.js
-- Python-flask
-- Mysql
+- Flask, Mysql
 - AWS EC2 
+- Bootstrap
 
 
 
